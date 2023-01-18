@@ -31,7 +31,26 @@ export interface Database {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      dishes: {
+        Row: {
+          created_at: string | null
+          id: number
+          name: string
+          price: number | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: number
+          name: string
+          price?: number | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: number
+          name?: string
+          price?: number | null
+        }
+      }
     }
     Views: {
       [_ in never]: never
